@@ -246,6 +246,45 @@ p { margin: 0 0 1em; }
 .team-title { margin: 0 8px 12px; color: #1f8ab1; font-weight: 700; font-size: .95rem; }
 .placeholder-text { margin: 0 8px; color: var(--muted); font-style: italic; font-size: .95rem; }
 
+/* Who we serve */
+[id] { scroll-margin-top: 110px; }
+.narrow { max-width: 760px; }
+.muted { color: var(--muted); }
+.jump-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.jump-nav a { display: inline-flex; align-items: center; gap: 8px; padding: .65em 1.2em; border-radius: 999px; background: var(--white); color: var(--navy); font-weight: 600; text-decoration: none; box-shadow: 0 1px 0 rgba(28, 43, 85, .08); transition: background .15s ease, transform .15s ease; }
+.jump-nav a:hover { background: var(--sky-soft); transform: translateY(-2px); }
+.jump-nav [data-lucide], .jump-nav svg { color: #1f8ab1; }
+.stage { padding: 100px 0; }
+.stage-alt { background: var(--sky-soft); }
+.stage-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+.stage-alt .stage-grid { grid-template-columns: .9fr 1.1fr; }
+.stage-alt .stage-copy { order: 2; }
+.stage-copy p { color: #3b4663; }
+.stage-num { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; font-family: var(--head); font-weight: 700; font-size: 1.2rem; margin-bottom: 18px; }
+.check-card { background: var(--white); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); border-top: 6px solid var(--sky); }
+.stage-alt .check-card { border-top-color: var(--sun); }
+#established-employers .check-card { border-top-color: var(--navy); }
+.check-card h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--navy); font-weight: 500; }
+.check-list [data-lucide], .check-list svg { flex-shrink: 0; margin-top: 3px; width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: var(--sky-soft); color: #1f8ab1; stroke-width: 3; }
+.roles { background: var(--navy); color: #d7deee; padding: 110px 0 170px; border-radius: 60px 60px 0 0; }
+.roles h2 { color: var(--white); }
+.roles-intro { max-width: 760px; font-size: 1.1rem; }
+.roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+.role-card { background: var(--navy-2); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, .06); }
+.role-card h3 { color: var(--white); font-size: 1.3rem; }
+.role-card p { font-size: .97rem; }
+.role-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; font-size: 1.4rem; margin-bottom: 18px; }
+.role-tag { font-family: var(--head); font-weight: 600; font-size: .8rem !important; text-transform: uppercase; letter-spacing: .1em; color: var(--sky); margin-bottom: .6em; }
+.role-kicker { margin: auto 0 0; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .12); font-family: var(--head); font-weight: 600; color: var(--white); }
+.role-card-feature { background: var(--sky); border: 0; }
+.role-card-feature h3, .role-card-feature .role-kicker { color: var(--navy); }
+.role-card-feature p { color: #16325c; }
+.role-card-feature .role-tag { color: var(--navy); }
+.role-card-feature .role-kicker { border-top-color: rgba(28, 43, 85, .2); }
+.role-card-feature .role-icon.navy { background: var(--navy); }
+
 /* Responsive */
 @media (max-width: 1080px) {
   .help-grid { grid-template-columns: repeat(2, 1fr); }
@@ -270,6 +309,8 @@ p { margin: 0 0 1em; }
   .founder-photo { max-width: 360px; }
   .choose-grid, .team-grid { grid-template-columns: 1fr 1fr; }
   .outcomes { grid-template-columns: 1fr; }
+  .stage-grid, .stage-alt .stage-grid, .roles-grid { grid-template-columns: 1fr; gap: 32px; }
+  .stage-alt .stage-copy { order: 0; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
@@ -287,7 +328,11 @@ p { margin: 0 0 1em; }
   .choose-grid, .team-grid, .how-list { grid-template-columns: 1fr; }
   .approach, .team { border-radius: 36px 36px 0 0; }
   .approach, .founder, .choose, .team { padding-top: 72px; padding-bottom: 72px; }
-  .team { padding-bottom: 120px; }
+  .team, .roles { padding-bottom: 120px; }
+  .stage { padding: 72px 0; }
+  .roles { padding-top: 72px; border-radius: 36px 36px 0 0; }
+  .check-card, .role-card { padding: 26px; }
+  .jump-nav a { flex: 1 1 100%; }
   .page-hero { padding: 48px 0 64px; }
   .founder-quote { padding: 28px; }
   .since-card { padding: 28px; }
