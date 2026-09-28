@@ -250,6 +250,12 @@ p { margin: 0 0 1em; }
 [id] { scroll-margin-top: 110px; }
 .narrow { max-width: 760px; }
 .muted { color: var(--muted); }
+.fact-row { list-style: none; padding: 0; margin: 32px 0 0; display: flex; flex-wrap: wrap; gap: 14px; }
+.fact-row li { background: var(--navy); color: #c3cbe0; border-radius: 18px; padding: 14px 22px; display: flex; flex-direction: column; min-width: 170px; }
+.fact-row li:first-child { background: var(--sky); color: var(--navy); }
+.fact-row strong { font-family: var(--head); font-size: 1.6rem; color: var(--white); line-height: 1.2; }
+.fact-row li:first-child strong { color: var(--navy); }
+.fact-row span { font-size: .88rem; }
 .jump-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
 .jump-nav a { display: inline-flex; align-items: center; gap: 8px; padding: .65em 1.2em; border-radius: 999px; background: var(--white); color: var(--navy); font-weight: 600; text-decoration: none; box-shadow: 0 1px 0 rgba(28, 43, 85, .08); transition: background .15s ease, transform .15s ease; }
 .jump-nav a:hover { background: var(--sky-soft); transform: translateY(-2px); }
@@ -285,9 +291,30 @@ p { margin: 0 0 1em; }
 .role-card-feature .role-kicker { border-top-color: rgba(28, 43, 85, .2); }
 .role-card-feature .role-icon.navy { background: var(--navy); }
 
+/* Benefits consulting */
+.service-tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 36px; }
+.service-tiles a { display: flex; flex-direction: column; gap: 12px; padding: 20px 16px; border-radius: 18px; background: var(--white); color: var(--navy); text-decoration: none; font-family: var(--head); font-weight: 600; font-size: .92rem; line-height: 1.25; transition: transform .15s ease, box-shadow .15s ease; }
+.service-tiles a:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.service-tiles [data-lucide], .service-tiles svg { font-size: 1.5rem; color: #1f8ab1; }
+.stage-num [data-lucide], .stage-num svg { font-size: 1.5rem; }
+.question-bubbles { list-style: none; padding: 0; margin: 1.2em 0 1.4em; display: flex; flex-wrap: wrap; gap: 10px; }
+.question-bubbles li { background: var(--sky-soft); color: var(--navy); font-weight: 500; padding: .55em 1em; border-radius: 18px 18px 18px 4px; font-size: .95rem; }
+.question-bubbles li:nth-child(3n) { background: var(--sun-soft); }
+.issue-chips { list-style: none; padding: 0; margin: 1.2em 0 1.4em; display: grid; gap: 8px; }
+.issue-chips li { background: var(--white); color: var(--navy); padding: .65em 1em; border-radius: 12px; border-left: 4px solid var(--sun); font-size: .95rem; font-weight: 500; }
+.callout { display: flex; gap: 18px; align-items: flex-start; margin-top: 48px; padding: 28px 32px; border-radius: var(--radius); background: var(--navy); color: #d7deee; }
+.callout > [data-lucide], .callout > svg { font-size: 1.8rem; color: var(--sun); margin-top: 2px; }
+.callout p { margin: 0; font-size: 1.12rem; }
+.callout strong { color: var(--white); }
+.callout-sun { background: var(--sun); color: var(--navy); }
+.callout-sun > [data-lucide], .callout-sun > svg { color: var(--navy); }
+.callout-sun strong { color: var(--navy); }
+.stage-last { padding-bottom: 160px; }
+
 /* Responsive */
 @media (max-width: 1080px) {
   .help-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-tiles { grid-template-columns: repeat(3, 1fr); }
   .site-nav { gap: 18px; }
 }
 @media (max-width: 960px) {
@@ -333,6 +360,10 @@ p { margin: 0 0 1em; }
   .roles { padding-top: 72px; border-radius: 36px 36px 0 0; }
   .check-card, .role-card { padding: 26px; }
   .jump-nav a { flex: 1 1 100%; }
+  .service-tiles { grid-template-columns: 1fr 1fr; }
+  .callout { padding: 22px; flex-direction: column; gap: 10px; }
+  .stage-last { padding-bottom: 120px; }
+  .fact-row li { flex: 1 1 100%; }
   .page-hero { padding: 48px 0 64px; }
   .founder-quote { padding: 28px; }
   .since-card { padding: 28px; }
