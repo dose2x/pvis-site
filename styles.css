@@ -373,11 +373,44 @@ p { margin: 0 0 1em; }
 .cycle-line { font-family: var(--head); font-weight: 700; font-size: .85rem; letter-spacing: .12em; color: var(--navy); opacity: .75; }
 .cycle-line span { display: block; letter-spacing: .04em; font-weight: 600; margin-top: 4px; }
 
+/* Resources */
+.faq { padding: 100px 0 110px; }
+.faq-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 32px 0 40px; }
+.faq-filters[hidden] { display: none; }
+.chip { font: inherit; font-weight: 600; font-size: .92rem; padding: .55em 1.1em; border-radius: 999px; border: 1px solid rgba(28, 43, 85, .15); background: var(--white); color: var(--navy); cursor: pointer; transition: background .15s ease, border-color .15s ease; }
+.chip:hover { border-color: var(--sky); }
+.chip.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.faq-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 8px; }
+.faq-group[hidden] { display: none; }
+.faq-groups.single { grid-template-columns: 1fr; max-width: 780px; margin-inline: auto; }
+.faq-group { background: var(--sand); border-radius: var(--radius); padding: 26px; }
+.faq-group h3 { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; margin-bottom: 14px; }
+.faq-group h3 [data-lucide], .faq-group h3 svg { color: #1f8ab1; }
+.faq-group details { background: var(--white); border-radius: 14px; margin-top: 10px; }
+.faq-group summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 18px; font-weight: 700; color: var(--navy); border-radius: 14px; }
+.faq-group summary::-webkit-details-marker { display: none; }
+.faq-group summary::after { content: "+"; flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--sky-soft); color: #1f8ab1; font-size: 1.2rem; font-weight: 700; transition: transform .2s ease; }
+.faq-group details[open] summary::after { content: "−"; background: var(--sun); color: var(--navy); }
+.faq-group summary:hover { background: #fbfaf7; }
+.answer { padding: 0 18px 18px; color: #3b4663; }
+.answer p { margin: 0 0 .7em; }
+.answer p:first-child { font-weight: 600; color: var(--navy); }
+.answer p:last-child { margin-bottom: 0; }
+.faq-callout { margin-top: 40px; }
+.faq-callout a { color: var(--sun); }
+.insights { background: var(--sky-soft); padding: 100px 0 170px; }
+.post-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 36px; }
+.post-card { background: var(--white); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 14px; border-top: 5px solid var(--sky); }
+.post-card:nth-child(even) { border-top-color: var(--sun); }
+.post-card h3 { font-size: 1.02rem; line-height: 1.3; margin: 0; }
+.post-tag { align-self: flex-start; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: var(--sand); padding: .3em .8em; border-radius: 999px; }
+
 /* Responsive */
 @media (max-width: 1080px) {
   .help-grid { grid-template-columns: repeat(2, 1fr); }
   .service-tiles { grid-template-columns: repeat(3, 1fr); }
   .coverage-grid { grid-template-columns: repeat(3, 1fr); }
+  .post-grid { grid-template-columns: repeat(3, 1fr); }
   .site-nav { gap: 18px; }
 }
 @media (max-width: 960px) {
@@ -402,6 +435,7 @@ p { margin: 0 0 1em; }
   .stage-grid, .stage-alt .stage-grid, .roles-grid { grid-template-columns: 1fr; gap: 32px; }
   .stage-alt .stage-copy { order: 0; }
   .journey-grid, .stewardship-grid, .expect-grid { grid-template-columns: 1fr; gap: 36px; }
+  .faq-groups { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
@@ -440,6 +474,11 @@ p { margin: 0 0 1em; }
   .expect { padding: 72px 0 120px; }
   .expect-list li { padding: 20px 20px 20px 66px; }
   .expect-list li::before { left: 16px; }
+  .faq, .insights { padding-top: 72px; }
+  .insights { padding-bottom: 120px; }
+  .post-grid { grid-template-columns: 1fr; }
+  .faq-group { padding: 16px; }
+  .faq-filters { justify-content: flex-start; }
   .page-hero { padding: 48px 0 64px; }
   .founder-quote { padding: 28px; }
   .since-card { padding: 28px; }
