@@ -103,10 +103,11 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 .art-card small { display: block; color: var(--muted); font-size: .82rem; line-height: 1.35; }
 .ac-1 { left: 14%; top: 34%; }
 .ac-2 { right: 7%; bottom: 30%; animation-delay: -3.5s; }
+.ac-3 { left: 8%; top: 9%; animation-delay: -1.75s; }
 .art-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--sky-soft); color: var(--sky-deep); font-size: 1.15rem; flex-shrink: 0; }
 .art-icon.sun { background: var(--sun-soft); color: var(--sun-ink); }
 .art-pill { position: absolute; z-index: 2; left: 9%; bottom: 8%; display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, .96); color: var(--navy); font-family: var(--label); font-weight: 600; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; padding: .8em 1.4em; border-radius: 999px; }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-22px); } }
 
 /* ---------- Home: serve, help, marquee ---------- */
 .serve { background: var(--paper); padding: 112px 0; }
@@ -508,7 +509,7 @@ a.direct-line:hover { background: var(--navy-2); }
   .nav-phone-mobile { display: inline-flex; align-items: center; gap: 10px; }
   .hero { grid-template-columns: 1fr; min-height: 0; padding-left: 0; }
   .hero-copy { padding: 48px 16px 40px; }
-  .hero-art { margin: 0; min-height: 440px; border-radius: 140px 0 0 0; }
+  .hero-art { margin: 0; min-height: 500px; border-radius: 140px 0 0 0; }
   .split-head, .exp-grid, .boutique-grid, .page-hero-grid, .story-grid, .approach-grid, .founder-grid, .stage-grid, .stage-alt .stage-grid, .roles-grid, .journey-grid, .stewardship-grid, .expect-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
   .stage-alt .stage-copy { order: 0; }
   .story-head, .founder-photo, .direct-card { position: static; }
@@ -540,8 +541,9 @@ a.direct-line:hover { background: var(--navy-2); }
   .panel { padding: 22px; border-radius: 22px; }
   .tab, .chip { font-size: .7rem; padding: .85em 1.1em; }
   .art-card { max-width: 230px; padding: 11px 13px; }
-  .ac-1 { left: 6%; }
-  .ac-2 { right: 5%; }
+  .ac-1 { left: 6%; top: 33%; }
+  .ac-3 { left: 5%; top: 5%; }
+  .ac-2 { right: 5%; bottom: 22%; }
   .step, .wheel-step { font-size: .72rem; padding: 6px 12px 6px 6px; }
   .step b, .wheel-step b { width: 24px; height: 24px; }
   .journey-wheel { aspect-ratio: auto; display: grid; gap: 8px; }
