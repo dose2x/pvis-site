@@ -35,6 +35,7 @@ function tabGroup(tabs, activate) {
     });
   });
   select(tabs[0]);
+  return select;
 }
 
 const panelToggle = (t, on) => {
@@ -42,7 +43,12 @@ const panelToggle = (t, on) => {
   document.getElementById(t.getAttribute('aria-controls')).classList.toggle('active', on);
 };
 tabGroup([...document.querySelectorAll('.tab')], panelToggle);
-tabGroup([...document.querySelectorAll('.journey-wheel [role="tab"]')], panelToggle);
+
+const wheelTabs = [...document.querySelectorAll('.journey-wheel [role="tab"]')];
+const selectStep = tabGroup(wheelTabs, panelToggle);
+const wanted = new URLSearchParams(location.search).get('step');
+const wantedTab = wheelTabs.find(t => t.getAttribute('aria-controls') === 'step-' + wanted);
+if (selectStep && wantedTab) selectStep(wantedTab);
 
 const cycle = document.querySelector('.cycle');
 if (cycle && 'IntersectionObserver' in window) {

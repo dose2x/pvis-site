@@ -174,7 +174,13 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
   26%, 100% { background: var(--cream); color: var(--navy); transform: translate(-50%, -50%) scale(1); box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); }
 }
 .cycle:hover .cycle-orbit, .cycle:hover .step, .cycle:hover .cycle-center svg,
-.js .cycle:not(.is-live) .cycle-orbit, .js .cycle:not(.is-live) .step, .js .cycle:not(.is-live) .cycle-center svg { animation-play-state: paused; }
+.js .cycle:not(.is-live) .cycle-orbit, .js .cycle:not(.is-live) .step, .js .cycle:not(.is-live) .cycle-center svg,
+.cycle:focus-within .cycle-orbit, .cycle:focus-within .step, .cycle:focus-within .cycle-center svg { animation-play-state: paused; }
+.cycle .step { text-decoration: none; cursor: pointer; }
+.cycle .step:hover, .cycle .step:focus-visible { background: var(--navy) !important; color: var(--paper) !important; transform: translate(-50%, -50%) scale(1.08) !important; box-shadow: 0 0 0 6px rgba(255, 198, 0, .35), 0 16px 30px -14px rgba(28, 43, 85, .6) !important; }
+.cycle:has(.step:hover) .step:not(:hover), .cycle:has(.step:focus-visible) .step:not(:focus-visible) { background: var(--cream) !important; color: var(--navy) !important; transform: translate(-50%, -50%) !important; box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5) !important; }
+.cycle-hint { display: flex; align-items: center; justify-content: center; gap: .5em; margin: 10px 0 0; color: var(--muted); font-size: .92rem; }
+.cycle-hint [data-lucide], .cycle-hint svg { color: var(--sky-deep); }
 .step, .wheel-step { position: absolute; display: flex; align-items: center; gap: 8px; background: var(--cream); border: 1px solid var(--line); padding: 8px 16px 8px 8px; border-radius: 999px; box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); font-family: var(--label); font-weight: 600; font-size: .78rem; color: var(--navy); transform: translate(-50%, -50%); white-space: nowrap; }
 .step b, .wheel-step b { flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--sun); font-size: .8rem; }
 .s1 { left: 50%; top: 12%; } .s2 { left: 83%; top: 31%; } .s3 { left: 83%; top: 69%; }
