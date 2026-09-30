@@ -302,9 +302,7 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 .founder { background: var(--sky-soft); padding: 112px 0; }
 .founder-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 64px; align-items: start; }
 .founder-copy p { color: var(--body); }
-.founder-photo { position: sticky; top: 120px; aspect-ratio: 4 / 5; border-radius: 200px 200px 24px 24px; }
-.placeholder-photo { display: grid; place-content: center; justify-items: center; gap: 8px; background: repeating-linear-gradient(135deg, rgba(79, 187, 223, .12) 0 12px, rgba(79, 187, 223, .22) 12px 24px); border: 1.5px dashed rgba(28, 43, 85, .3); color: var(--navy); font-weight: 600; font-size: .9rem; }
-.placeholder-photo [data-lucide], .placeholder-photo svg { font-size: 3rem; opacity: .5; }
+.founder-photo { position: sticky; top: 120px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 200px 200px 24px 24px; box-shadow: var(--shadow); }
 .founder-quote { margin: 64px auto 32px; max-width: 860px; background: var(--paper); border-radius: 24px; padding: 40px 48px; box-shadow: var(--shadow); border-left: 6px solid var(--sun); }
 .founder-quote p { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 2.8vw, 2.2rem); line-height: 1.25; color: var(--navy); }
 .founder-quote footer { color: var(--muted); font-weight: 500; }
@@ -323,7 +321,7 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 .team-head p { color: var(--body); }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 .team-card { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 18px 18px 28px; }
-.team-card .placeholder-photo { aspect-ratio: 1; border-radius: 16px; margin-bottom: 20px; }
+.team-photo { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 16px; margin-bottom: 20px; background: var(--sky-soft); }
 .team-card h3 { margin: 0 8px 2px; }
 .team-title { margin: 0 8px 12px; color: var(--sky-deep); font-weight: 700; font-size: .95rem; }
 .placeholder-text { margin: 0 8px; color: var(--muted); font-style: italic; font-size: .95rem; }
