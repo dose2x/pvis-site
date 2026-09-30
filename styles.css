@@ -151,7 +151,7 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Home: experience, boutique, compliance, quote ---------- */
-.experience { background: var(--paper); padding: 112px 0; }
+.experience { background: var(--paper); padding: 112px 0; overflow-x: clip; }
 .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 .exp-copy p { color: var(--body); }
 .exp-copy .btn { margin-top: .8em; }
@@ -161,6 +161,20 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 @keyframes spin { to { transform: rotate(360deg); } }
 .cycle-center { position: absolute; inset: 30%; border-radius: 50%; background: var(--navy); color: var(--paper); display: grid; place-content: center; text-align: center; gap: 6px; padding: 12px; font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.15; }
 .cycle-center [data-lucide], .cycle-center svg { font-size: 1.7rem; margin-inline: auto; color: var(--sun); }
+.cycle-orbit { position: absolute; inset: 12%; pointer-events: none; animation: orbit 8.4s linear infinite; }
+.cycle-orbit::before { content: ""; position: absolute; left: 50%; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 6px rgba(255, 198, 0, .28), 0 0 18px rgba(255, 198, 0, .85); }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.cycle .cycle-center svg { animation: orbit 8.4s linear infinite; }
+.cycle .step { animation: stepLit 8.4s ease-in-out infinite; }
+.cycle .s2 { animation-delay: 1.4s; } .cycle .s3 { animation-delay: 2.8s; } .cycle .s4 { animation-delay: 4.2s; }
+.cycle .s5 { animation-delay: 5.6s; } .cycle .s6 { animation-delay: 7s; }
+@keyframes stepLit {
+  0% { background: var(--cream); color: var(--navy); transform: translate(-50%, -50%) scale(1); box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); }
+  4%, 15% { background: var(--navy); color: var(--paper); transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 0 0 6px rgba(255, 198, 0, .35), 0 16px 30px -14px rgba(28, 43, 85, .6); }
+  26%, 100% { background: var(--cream); color: var(--navy); transform: translate(-50%, -50%) scale(1); box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); }
+}
+.cycle:hover .cycle-orbit, .cycle:hover .step, .cycle:hover .cycle-center svg,
+.js .cycle:not(.is-live) .cycle-orbit, .js .cycle:not(.is-live) .step, .js .cycle:not(.is-live) .cycle-center svg { animation-play-state: paused; }
 .step, .wheel-step { position: absolute; display: flex; align-items: center; gap: 8px; background: var(--cream); border: 1px solid var(--line); padding: 8px 16px 8px 8px; border-radius: 999px; box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); font-family: var(--label); font-weight: 600; font-size: .78rem; color: var(--navy); transform: translate(-50%, -50%); white-space: nowrap; }
 .step b, .wheel-step b { flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--sun); font-size: .8rem; }
 .s1 { left: 50%; top: 12%; } .s2 { left: 83%; top: 31%; } .s3 { left: 83%; top: 69%; }
@@ -544,7 +558,8 @@ a.direct-line:hover { background: var(--navy-2); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .art-card, .cycle-ring, .js .panel.active, .js .step-panel.active { animation: none; }
+  .art-card, .cycle-ring, .js .panel.active, .js .step-panel.active, .cycle .step, .cycle .cycle-center svg { animation: none; }
+  .cycle-orbit { display: none; }
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .marquee-group[aria-hidden="true"] { display: none; }
 }

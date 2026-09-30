@@ -44,6 +44,11 @@ const panelToggle = (t, on) => {
 tabGroup([...document.querySelectorAll('.tab')], panelToggle);
 tabGroup([...document.querySelectorAll('.journey-wheel [role="tab"]')], panelToggle);
 
+const cycle = document.querySelector('.cycle');
+if (cycle && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => cycle.classList.toggle('is-live', entry.isIntersecting), { threshold: 0.35 }).observe(cycle);
+}
+
 const filters = document.querySelector('.faq-filters');
 if (filters) {
   filters.hidden = false;
