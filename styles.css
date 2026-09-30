@@ -7,7 +7,7 @@
   --cream: #faf7f1;
   --paper: #ffffff;
   --sky: #4fbbdf;
-  --sky-deep: #1f7fa6;
+  --sky-deep: #1a6f92;
   --sky-soft: #e3f3f9;
   --sun: #ffc600;
   --sun-soft: #fff3c4;
@@ -86,8 +86,8 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 .nav-toggle { display: none; background: none; border: 0; color: var(--navy); font-size: 1.6rem; padding: 8px; cursor: pointer; }
 
 /* ---------- Home: hero ---------- */
-.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); min-height: clamp(580px, 84vh, 780px); overflow: hidden; }
-.hero-copy { padding: 64px 56px 56px max(16px, calc((100vw - 1180px) / 2)); display: flex; flex-direction: column; justify-content: center; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: clamp(580px, 84vh, 780px); overflow: hidden; padding-left: max(16px, calc((100% - 1180px) / 2)); }
+.hero-copy { padding: 64px 56px 56px 0; display: flex; flex-direction: column; justify-content: center; }
 .hero-copy .lead { max-width: 560px; margin-bottom: 0; }
 .stats, .fact-row { display: flex; flex-wrap: wrap; gap: 20px clamp(24px, 3vw, 44px); margin: 44px 0 0; padding: 28px 0 0; border-top: 1px solid var(--line); list-style: none; }
 .stat dt, .fact-row strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 2.4rem; line-height: 1; color: var(--navy); }
@@ -478,7 +478,7 @@ a.direct-line:hover { background: var(--navy-2); }
   .site-nav a { padding: 16px 4px; border-bottom: 1px solid var(--line); font-size: 1rem; }
   .site-nav a::after { display: none; }
   .nav-phone-mobile { display: inline-flex; align-items: center; gap: 10px; }
-  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero { grid-template-columns: 1fr; min-height: 0; padding-left: 0; }
   .hero-copy { padding: 48px 16px 40px; }
   .hero-art { margin: 0; min-height: 440px; border-radius: 140px 0 0 0; }
   .split-head, .exp-grid, .boutique-grid, .page-hero-grid, .story-grid, .approach-grid, .founder-grid, .stage-grid, .stage-alt .stage-grid, .roles-grid, .journey-grid, .stewardship-grid, .expect-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
