@@ -50,9 +50,9 @@ const wanted = new URLSearchParams(location.search).get('step');
 const wantedTab = wheelTabs.find(t => t.getAttribute('aria-controls') === 'step-' + wanted);
 if (selectStep && wantedTab) selectStep(wantedTab);
 
-const cycle = document.querySelector('.cycle');
-if (cycle && 'IntersectionObserver' in window) {
-  new IntersectionObserver(([entry]) => cycle.classList.toggle('is-live', entry.isIntersecting), { threshold: 0.35 }).observe(cycle);
+if ('IntersectionObserver' in window) {
+  const live = new IntersectionObserver(entries => entries.forEach(e => e.target.classList.toggle('is-live', e.isIntersecting)), { threshold: 0.35 });
+  document.querySelectorAll('.cycle, .journey-wheel').forEach(el => live.observe(el));
 }
 
 const filters = document.querySelector('.faq-filters');

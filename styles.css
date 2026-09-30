@@ -175,7 +175,7 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
   26%, 100% { background: var(--cream); color: var(--navy); transform: translate(-50%, -50%) scale(1); box-shadow: 0 14px 30px -18px rgba(28, 43, 85, .5); }
 }
 .cycle:hover .cycle-orbit, .cycle:hover .step, .cycle:hover .cycle-center svg,
-.js .cycle:not(.is-live) .cycle-orbit, .js .cycle:not(.is-live) .step, .js .cycle:not(.is-live) .cycle-center svg,
+.js .cycle:not(.is-live) .cycle-orbit, .js .journey-wheel:not(.is-live) .cycle-orbit, .js .cycle:not(.is-live) .step, .js .cycle:not(.is-live) .cycle-center svg,
 .cycle:focus-within .cycle-orbit, .cycle:focus-within .step, .cycle:focus-within .cycle-center svg { animation-play-state: paused; }
 .cycle .step { text-decoration: none; cursor: pointer; }
 .cycle .step:hover, .cycle .step:focus-visible { background: var(--navy) !important; color: var(--paper) !important; transform: translate(-50%, -50%) scale(1.08) !important; box-shadow: 0 0 0 6px rgba(255, 198, 0, .35), 0 16px 30px -14px rgba(28, 43, 85, .6) !important; }
@@ -546,7 +546,7 @@ a.direct-line:hover { background: var(--navy-2); }
   .step, .wheel-step { font-size: .72rem; padding: 6px 12px 6px 6px; }
   .step b, .wheel-step b { width: 24px; height: 24px; }
   .journey-wheel { aspect-ratio: auto; display: grid; gap: 8px; }
-  .journey-wheel .cycle-ring, .journey-wheel .cycle-center { display: none; }
+  .journey-wheel .cycle-ring, .journey-wheel .cycle-orbit, .journey-wheel .cycle-center { display: none; }
   .wheel-step { position: static; transform: none; max-width: none; width: 100%; font-size: .95rem; }
   .wheel-step.active { transform: none; }
   .step-panel, .check-card, .role-card, .duo-card, .form-card, .direct-card { padding: 26px; }
