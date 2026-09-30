@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/logo-color-640.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,18 +18,20 @@
       <a href="index.html" class="brand" aria-label="Playa Vista Insurance Services home">
         <img src="assets/logo-color-640.png" alt="Playa Vista Insurance Services" width="640" height="530">
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <i data-lucide="menu"></i>
-      </button>
-      <nav id="site-nav" class="site-nav">
+      <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="about.html">About</a>
         <a href="who-we-serve.html" aria-current="page">Who We Serve</a>
         <a href="benefits-consulting.html">Benefits Consulting</a>
         <a href="insurance.html">Insurance</a>
         <a href="experience.html">The PVIS Experience</a>
         <a href="resources.html">Resources</a>
-        <a href="contact.html" class="btn btn-sun btn-sm">Let's Talk</a>
+        <a href="tel:+18008342310" class="nav-phone-mobile"><i data-lucide="phone"></i> 800-834-2310</a>
       </nav>
+      <div class="header-cta">
+        <a href="tel:+18008342310" class="header-phone"><i data-lucide="phone"></i> 800-834-2310</a>
+        <a href="contact.html" class="btn btn-navy btn-sm">Let's Talk</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><i data-lucide="menu"></i></button>
+      </div>
     </div>
   </header>
 
@@ -162,12 +164,16 @@
     </section>
 
     <section class="closing">
+      <svg class="closing-waves" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="rgba(79,187,223,.16)" d="M0,110 C200,60 380,70 560,110 C740,150 920,150 1080,105 C1140,88 1180,90 1200,96 L1200,200 L0,200 Z"/>
+        <path fill="rgba(79,187,223,.10)" d="M0,150 C220,110 400,125 590,155 C780,185 950,180 1110,145 C1160,134 1190,136 1200,138 L1200,200 L0,200 Z"/>
+      </svg>
       <div class="wrap closing-inner">
-        <h2>Let's Make Benefits Easier.</h2>
+        <h2>Let's Make Benefits <em>Easier.</em></h2>
         <p>Whether you're looking for a new benefits partner, rethinking your current strategy, or just want to know if there's a better way, we'd love to talk.</p>
         <div class="cta-row center">
-          <a href="contact.html" class="btn btn-navy">Let's Talk</a>
-          <a href="tel:+18008342310" class="btn btn-ghost-dark"><i data-lucide="phone"></i> 800-834-2310</a>
+          <a href="contact.html" class="btn btn-sun">Let's Talk <i data-lucide="arrow-right"></i></a>
+          <a href="tel:+18008342310" class="btn btn-ghost-light"><i data-lucide="phone"></i> 800-834-2310</a>
         </div>
       </div>
     </section>
@@ -176,20 +182,20 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
-        <img src="assets/logo-reverse-640.png" alt="Playa Vista Insurance Services" width="640" height="530" class="footer-logo">
-        <p class="footer-name">Playa Vista Insurance Services, Inc.</p>
+        <img src="assets/logo-color-640.png" alt="Playa Vista Insurance Services" width="640" height="530">
         <p>Employee benefits strategy and support for employers nationwide.</p>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
+      <nav class="footer-col" aria-label="Footer">
+        <h4>Explore</h4>
         <a href="about.html">About</a>
         <a href="who-we-serve.html">Who We Serve</a>
         <a href="benefits-consulting.html">Benefits Consulting</a>
         <a href="insurance.html">Insurance</a>
         <a href="experience.html">The PVIS Experience</a>
         <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
       </nav>
-      <div class="footer-contact">
+      <div class="footer-col">
+        <h4>Get in touch</h4>
         <a href="tel:+18008342310"><i data-lucide="phone"></i> 800-834-2310</a>
         <a href="mailto:TeamPVIS@playavistains.com"><i data-lucide="mail"></i> TeamPVIS@playavistains.com</a>
         <span><i data-lucide="map-pin"></i> Serving employers nationwide</span>
