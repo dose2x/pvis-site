@@ -345,7 +345,6 @@ h1, h2, h3, .kicker, .cycle-line, .help-close, .callout p, .approach-close, .ste
 .team-photo { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 16px; margin-bottom: 20px; background: var(--sky-soft); }
 .team-card h3 { margin: 0 8px 2px; }
 .team-title { margin: 0 8px 12px; color: var(--sky-deep); font-weight: 700; font-size: .95rem; }
-.placeholder-text { margin: 0 8px; color: var(--muted); font-style: italic; font-size: .95rem; }
 .team-bio { margin: 0 8px; }
 .team-bio p { color: var(--body); font-size: .95rem; margin: 0 0 .9em; }
 .team-bio .more { margin-top: .2em; }
