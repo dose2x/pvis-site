@@ -4,12 +4,30 @@ if (window.lucide) lucide.createIcons();
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('site-nav');
 if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+  const setOpen = open => {
+    nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape' || !nav.classList.contains('open')) return;
+    setOpen(false);
+    toggle.focus();
   });
 }
+
+document.querySelectorAll('.motion-toggle').forEach(btn => {
+  const target = document.getElementById(btn.getAttribute('aria-controls'));
+  const label = btn.querySelector('.motion-label');
+  if (!target) return;
+  btn.addEventListener('click', () => {
+    const paused = target.classList.toggle('motion-paused');
+    btn.toggleAttribute('data-paused', paused);
+    const text = paused ? btn.dataset.play : btn.dataset.pause;
+    if (label) label.textContent = text; else btn.setAttribute('aria-label', text);
+  });
+});
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
