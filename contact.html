@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://pvis-contact.ohndtomatometer.workers.dev; frame-src https://challenges.cloudflare.com; form-action 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="noindex, nofollow">
   <title>Contact Us in Los Angeles, CA | Playa Vista Insurance Services</title>
@@ -78,7 +78,7 @@
         <div class="form-card">
           <h2>Send Us a Note</h2>
           <p class="muted form-intro">Fields marked <span class="req">*</span> are required.</p>
-          <form id="contact-form" data-endpoint="https://formspree.io/f/xaenvazg" novalidate>
+          <form id="contact-form" data-endpoint="https://pvis-contact.ohndtomatometer.workers.dev" novalidate>
             <div class="field-row">
               <div class="field">
                 <label for="name">Name <span class="req">*</span></label>
@@ -121,6 +121,8 @@
               <label for="website">Leave this field empty</label>
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
+            <!-- Cloudflare Turnstile human check. The site key is public by design; the secret key lives only in the pvis-contact Worker. -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAFy9op_gJYTGruFd"></div>
             <button type="submit" class="btn btn-navy">Send Message <i data-lucide="send"></i></button>
             <div class="form-status" role="status" aria-live="polite"></div>
             <p class="form-privacy">We use what you send only to respond to you. <a href="privacy.html">Read our Privacy Policy</a>.</p>
@@ -161,5 +163,6 @@
 
   <script src="assets/vendor/icons.js"></script>
   <script src="main.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&amp;render=explicit" async defer></script>
 </body>
 </html>

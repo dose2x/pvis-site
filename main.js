@@ -98,6 +98,11 @@ if (form) {
     status.textContent = text;
     status.className = 'form-status' + (kind ? ' ' + kind : '');
   };
+  // Cloudflare's script calls this once it has loaded. Narrow phones get the compact box so it fits inside the card.
+  window.onTurnstileLoad = () => {
+    const box = form.querySelector('.cf-turnstile');
+    if (box) window.turnstile.render(box, { sitekey: box.dataset.sitekey, action: 'contact', theme: 'light', size: window.innerWidth < 400 ? 'compact' : 'flexible' });
+  };
   const checks = {
     name: v => v ? '' : 'Please enter your name.',
     company: v => v ? '' : 'Please enter your company name.',
@@ -130,17 +135,33 @@ if (form) {
       return;
     }
 
+    // Cloudflare Turnstile puts its token in the form as soon as the visitor passes the check.
+    const data = new FormData(form);
+    if (!data.get('cf-turnstile-response')) {
+      setStatus(window.turnstile
+        ? 'Please complete the human check above, then send your message.'
+        : 'The human check didn\'t load. Please call 800-834-2310 or email TeamPVIS@playavistains.com.', 'warn');
+      return;
+    }
+
     submit.disabled = true;
     setStatus('Sending…');
+    let sent = false;
+    let failure = 'Something went wrong sending your message. Please call 800-834-2310 or email TeamPVIS@playavistains.com.';
     try {
-      const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error(res.status);
+      const res = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      const reply = await res.json().catch(() => ({}));
+      if (res.ok && reply.ok !== false) sent = true;
+      else if (reply.error) failure = reply.error;
+    } catch {}
+    if (sent) {
       form.reset();
       setStatus('Thanks — your message is on its way. We\'ll be in touch soon.', 'ok');
-    } catch {
-      setStatus('Something went wrong sending your message. Please call 800-834-2310 or email TeamPVIS@playavistains.com.', 'warn');
-    } finally {
-      submit.disabled = false;
+    } else {
+      setStatus(failure, 'warn');
     }
+    submit.disabled = false;
+    // A token works only once, so the visitor gets a fresh check for the next try.
+    if (window.turnstile) window.turnstile.reset();
   });
 }
