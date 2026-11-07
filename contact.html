@@ -78,7 +78,8 @@
         <div class="form-card">
           <h2>Send Us a Note</h2>
           <p class="muted form-intro">Fields marked <span class="req">*</span> are required.</p>
-          <form id="contact-form" data-endpoint="https://pvis-contact.ohndtomatometer.workers.dev" novalidate>
+          <noscript><p class="form-status warn">This form needs JavaScript to send your message. Please turn it on, or call <a href="tel:+18008342310">800-834-2310</a> or email <a href="mailto:TeamPVIS@playavistains.com">TeamPVIS@playavistains.com</a>.</p></noscript>
+          <form id="contact-form" method="post" data-endpoint="https://pvis-contact.ohndtomatometer.workers.dev" novalidate>
             <div class="field-row">
               <div class="field">
                 <label for="name">Name <span class="req">*</span></label>
